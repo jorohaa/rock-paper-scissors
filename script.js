@@ -1,3 +1,7 @@
+// create two score variables humanScore and computerScore
+let humanScore = 0;
+let computerScore = 0;
+
 // create function getComputerChoice
 // create variable choice
 // get random number between 0 and 100 and put it in choice
