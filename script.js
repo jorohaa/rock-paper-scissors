@@ -27,11 +27,62 @@ function getComputerChoice() {
 // store input from prompt in choice
 // convert choice to lowercase
 // return choice
-function getHumanChoice () {
+function getHumanChoice() {
     let choice = prompt("Rock, paper, or scissors?");
     choice = String(choice).toLowerCase();
     return choice;
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+// create function playRound
+// give playRound parameters: humanChoice, computerChoice
+// evaluate humanChoice first, then computerChoice
+// increment score variable according to winner
+// in case humanChoice wins, return "You win! [humanChoice] beats [computerChoice]"
+// in case computerChoice wins, return "You lose! [computerChoice] beats [humanChoice]"
+// in case it's a tie, return "It's a tie! Both chose [humanChoice]"
+function playRound(humanChoice, computerChoice) {
+    let humanWin = `You win! ${humanChoice} beats ${computerChoice}.`;
+    let computerWin = `You lose! ${computerChoice} beats ${humanChoice}.`;
+    let tie = `It's a tie! Both chose ${humanChoice}.`;
+
+    switch (humanChoice) {
+        case "rock":
+            if (computerChoice === "paper") {
+                ++computerScore;
+                return computerWin;
+            }
+            else if (computerChoice === "scissors") {
+                ++humanScore;
+                return humanWin;
+            } else {
+                return tie;
+            }
+        case "paper":
+            if (computerChoice === "scissors") {
+                ++computerScore;
+                return computerWin;
+            }
+            else if (computerChoice === "rock") {
+                ++humanScore;
+                return humanWin;
+            } else {
+                return tie;
+            }
+        case "scissors":
+            if (computerChoice === "rock") {
+                ++computerScore;
+                return computerWin;
+            }
+            else if (computerChoice === "paper") {
+                ++humanScore;
+                return humanWin;
+            } else {
+                return tie;
+            }
+    }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+console.log(playRound(humanChoice, computerChoice));
