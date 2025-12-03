@@ -2,6 +2,9 @@
 let humanScore = 0;
 let computerScore = 0;
 
+// call playGame()
+playGame();
+
 // create function getComputerChoice
 // create variable choice
 // get random number between 0 and 100 and put it in choice
@@ -82,7 +85,28 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+// create function playGame
+// playGame loops playRound 5 times
+// --create variables humanChoice and computerChoice
+// --humanChoice and computerChoice need to be reassigned with each game
+// playGame prints scores at end of each game
+// playGame prints winner at the end
+function playGame() {
+    let humanChoice;
+    let computerChoice;
 
-console.log(playRound(humanChoice, computerChoice));
+    for (let i = 0; i < 5; i++) {
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice();
+        console.log(playRound(humanChoice, computerChoice));
+        console.log(`Human score: ${humanScore}, computer score: ${computerScore}`);
+    }
+
+    if (humanScore > computerScore) {
+        console.log("Game over - Human won!");
+    } else if (humanScore < computerScore) {
+        console.log("Game over - Computer won!");
+    } else {
+        console.log("Game over - It's a tie!");
+    }
+}
