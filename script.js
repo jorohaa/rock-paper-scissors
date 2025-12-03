@@ -18,4 +18,16 @@ function getComputerChoice() {
     }
 }
 
+// create function getHumanChoice
+// create variable choice
+// store input from prompt in choice
+// convert choice to lowercase
+// return choice
+function getHumanChoice () {
+    let choice = prompt("Rock, paper, or scissors?");
+    choice = String(choice).toLowerCase();
+    return choice;
+}
+
 console.log(getComputerChoice());
+console.log(getHumanChoice());
