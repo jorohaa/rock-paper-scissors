@@ -6,10 +6,10 @@ playGame();
 function getComputerChoice() {
     let choice = Math.random() * 100;
 
-    if (choice >= 0 && choice <= 33.33) {
+    if (choice >= 0 && choice <= 33.34) {
         return "rock";
     }
-    else if (choice >= 33.34 && choice <= 66.66) {
+    else if (choice > 33.34 && choice <= 66.67) {
         return "paper";
     }
     else {
